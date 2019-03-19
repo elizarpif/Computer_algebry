@@ -1,22 +1,22 @@
 
 
-def binary_pow_recursive(a, b):
-    if (b==0):
-        return 1;
-    if (b % 2==0):
-        temp = binary_pow(a, int(b/2))
-        return temp*temp;
-    if (b%2 == 1):
-        return binary_pow(a, b-1)*a
+##def binary_pow_recursive(a, b):
+##    if (b==0):
+##        return 1;
+##    if (b % 2==0):
+##        temp = binary_pow(a, int(b/2))
+##        return temp*temp;
+##    if (b%2 == 1):
+##        return binary_pow(a, b-1)*a
 
-def binary_pow(a, b): #3, 7=111
+def binary_pow(a, b): 
     
     res = 1
     if (b==0)&(a==0):
         return None
-    while( b>0):
-        
-       if (b&1):
+    while( b>0): #if b<0, 1 will be returned
+           
+        if (b&1):
             res *= a
         a = a*a
         b = b>>1
