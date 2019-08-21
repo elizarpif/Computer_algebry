@@ -1,3 +1,6 @@
+# Реализация алгоритма Карацубы для чисел и полиномов
+# бинарное возведение в степень по модулю n
+
 import numpy as np
 
 def IntKaratsuba(a: int, b: int):
@@ -88,6 +91,7 @@ def GCD(a: int, b: int):
         x0, x1 = x1, x0 - x1 * q  # x0=0,x1=1
         y0, y1 = y1, y0 - y1 * q  # y0=1, y1 = -1
     return a0, x0, y0
+
 #Поиск обратного элемента в кольце вычетов по модулю n
 def inverse(b, n):
     g, x, y = GCD(b, n)
@@ -95,15 +99,7 @@ def inverse(b, n):
         return x % n
     else:   #Если нет элемента
         return None
-#
-# def BinPowMod_rec(a, b):
-#    if (b==0):
-#        return 1;
-#    if (b % 2==0):
-#        temp = BinPowMod_rec(a, int(b/2))
-#        return temp*temp;
-#    if (b%2 == 1):
-#        return BinPowMod_rec(a, b-1)*a
+
 
 def BinPowMod(a, b, n):
     res = 1
