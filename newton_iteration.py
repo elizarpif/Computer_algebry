@@ -17,6 +17,7 @@ def GCD(a: int, b: int):
         x0, x1 = x1, x0 - x1 * q  # x0=0,x1=1
         y0, y1 = y1, y0 - y1 * q  # y0=1, y1 = -1
     return a0, x0, y0
+
 #Поиск обратного элемента в кольце вычетов по модулю n
 def inverse(b, n):
     g, x, y = GCD(b, n)
@@ -30,8 +31,6 @@ def modPoly(f: Poly, n: int):
     for i in range(len(coefs)):
         coefs[i] = coefs[i]%n
     return Poly(coefs)
-
-
 
 def PolyInverseModOverZn(f: Poly, r: int, zn: int): #r=2, mod zn r = log2
     if (r<1) or (zn<1):
@@ -119,25 +118,8 @@ def PolyDivModOverQ (a, b : Poly ): #−> (Poly , Poly ):
     return q, r
 
 
-a = Poly([1,2,3,4])
-print(a*a)
-a = Poly([1,2,3,4,5,6,7,8,9])
-print(a*a)
-
-##reva = Poly([17,18,19,20])
-##f = PolyInverseModOverZn(reva,3,101)
-##
-##a=Poly([37,36,35,34,33,32,31,30])
-##b = Poly([20,19,18,17])
-##q,r = PolyDivModOverZn(a, b, 101)
-##print(a, ' = ', b, ' * ', q, ' + ', r)
-##print(modPoly(b*q + r,101))
-#c = PolyInverseModOverQ(Poly([Fraction(1,2), Fraction(3,4)]),1)
-
-
-
-
-
-
-
+# a = Poly([1,2,3,4])
+# print(a*a)
+# a = Poly([1,2,3,4,5,6,7,8,9])
+# print(a*a)
 
